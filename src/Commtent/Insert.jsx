@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 import { MdSend } from "react-icons/md"
 import { FiPlus } from "react-icons/fi";
+import { IoChatboxOutline } from "react-icons/io5";
+
 const TodoInsertWrapper = styled.form`
   display: flex;
   background: #495057;
@@ -61,7 +63,7 @@ function Insert({ onInsert }) {
                 type='text'
                 onChange={handleChange}
                 value={value}
-                placeholder="메세지를 입력해주세요"
+                placeholder="메세지를 입력해주세요."
             />
             <StyledButton type='submit'>
               <MdSend />
