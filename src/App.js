@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import Template from './Commtent/Template';
-import ListItem from './Commtent/ListItem';
 import Insert from './Commtent/Insert';
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { v4 as uuidv4 } from "uuid";
 import List from './Commtent/List';
-import { io } from "socket.io-client";
+import io from "socket.io-client";
+
+// const socket = io.connect('http://localhost:3000');
 
 function App() {
   const [inputText, setInputText] = useState([]);
@@ -22,6 +23,7 @@ function App() {
     setInputText(inputText.concat(todo));
     nextId.current += 1;
   };
+
 
   return (
     <Template>

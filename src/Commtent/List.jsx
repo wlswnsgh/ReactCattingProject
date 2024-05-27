@@ -12,9 +12,9 @@ function List({ todos }) {
     return (
         <TodoListWrapper>
             {todos.map((todo) => {
-               return <ListItem 
-               key={todo.id} todo={todo} 
-               />;  
+            return <ListItem 
+            key={todo.id} todo={todo} 
+            />;  
             })}
         </TodoListWrapper>
     );
