@@ -20,6 +20,20 @@ const StyledInput = styled.input`
   flex: 1; 
 `;
 
+const StyledInput2 = styled.input`
+  border: none;
+  background: #868e96;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 45px;
+  cursor: pointer;
+  transition: 0.2s background ease-in;
+  &:hover {
+    background: #adb5bd;
+  }
+`;
+
 const StyledButton = styled.button`
   border: none;
   background: #868e96;
@@ -36,7 +50,8 @@ const StyledButton = styled.button`
   }
 `;
 
-function Insert({ onInsert }) {
+function Insert(props) {
+    const {onInsert} = props;
     const [value, setValue] = useState('');
 
     const handleChange = (e) => {
@@ -54,17 +69,21 @@ function Insert({ onInsert }) {
         setValue('');
     };
 
+    
+
     return (
         <TodoInsertWrapper onSubmit={handleSubmit}>
-            <StyledButton>
-              <FiPlus />
-            </StyledButton>
+            <StyledInput2 type='button'>
+              {/* <FiPlus /> */}
+            </StyledInput2>
+
             <StyledInput 
                 type='text'
                 onChange={handleChange}
                 value={value}
                 placeholder="메세지를 입력해주세요."
             />
+            
             <StyledButton type='submit'>
               <MdSend />
             </StyledButton>
