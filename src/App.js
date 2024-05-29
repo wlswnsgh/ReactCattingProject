@@ -12,15 +12,10 @@ function App() {
 
     setInputText((prev) => [
       ...prev,
-      {text: text},
-      {
-        text: `your chatting: ${text}`
-      },
-
+      {text: text}
     ]);
 
   };
-
 
   return (
     <Template>
@@ -29,5 +24,7 @@ function App() {
     </Template>
   );
 }
+
+
 
 export default App;
