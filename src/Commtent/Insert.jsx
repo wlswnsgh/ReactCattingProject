@@ -38,7 +38,6 @@ const StyledInput2 = styled.input`
 const StyledImg = styled.img`
   width: 100px;
   height: 100px;
-  background: red;
 `;
 
 const StyledButton = styled.button`
@@ -61,8 +60,8 @@ function Insert(props) {
     const {onInsert, imgdate} = props;
     const [value, setValue] = useState('');
     const [images, setImages] = useState();
-    const fileInput = React.useRef(null);
-
+    const fileInput = useRef(null);
+  
 
     const handleChange = (e) => {
         setValue(e.target.value);
@@ -92,7 +91,7 @@ function Insert(props) {
         if (!value) {
           return; 
         }
-        
+
         onInsert(value);
         setValue('');
       } 
@@ -108,7 +107,6 @@ function Insert(props) {
               type='file'
               ref={fileInput}
               accept='image/*'
-              
             />
 
             <StyledInput 
