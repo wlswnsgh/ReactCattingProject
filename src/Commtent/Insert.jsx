@@ -85,7 +85,14 @@ function Insert(props) {
     };
 
     const handleKeyUp = (e) => {
+      
       if (e.key === 'Enter') {
+        e.preventDefault();
+    
+        if (!value) {
+          return; 
+        }
+        
         onInsert(value);
         setValue('');
       } 
@@ -101,7 +108,7 @@ function Insert(props) {
               type='file'
               ref={fileInput}
               accept='image/*'
-              // value={images}
+              
             />
 
             <StyledInput 
