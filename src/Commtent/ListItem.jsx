@@ -24,10 +24,6 @@ const Text = styled.div`
 function ListItem(props) {
     const { todo: { text, done} } = props;
 
-    const handleDelete = () => {
-      
-    };
-
     return (
         <TodoListItemWrapper>
             <Text done = {done}>{text}</Text>

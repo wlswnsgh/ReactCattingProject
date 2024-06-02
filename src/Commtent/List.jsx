@@ -8,12 +8,12 @@ const TodoListWrapper = styled.div`
   overflow-y: auto;
 `;
 
-function List({ todos }) {
+function List({ todos, Img }) {
     return (
         <TodoListWrapper>
             {todos.map((todo) => {
             return <ListItem 
-            key={todo.id} todo={todo} 
+            key={todo.id} todo={todo} Img = {Img}
             />;  
             })}
         </TodoListWrapper>

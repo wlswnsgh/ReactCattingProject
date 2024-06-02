@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import styled from "styled-components";
 import { MdSend } from "react-icons/md"
 import { FiPlus } from "react-icons/fi";
-import { IoChatboxOutline } from "react-icons/io5";
 
 const TodoInsertWrapper = styled.div`
   display: flex;
@@ -21,23 +20,7 @@ const StyledInput = styled.input`
 `;
 
 const StyledInput2 = styled.input`
-  border: none;
-  background: #868e96;
-  color: white;
-  display: flex;
-  align-items: center;
-  width: 45px;
-  cursor: pointer;
   display: none;
-  transition: 0.2s background ease-in;
-  &:hover {
-    background: #adb5bd;
-  }
-`;
-
-const StyledImg = styled.img`
-  width: 100px;
-  height: 100px;
 `;
 
 const StyledButton = styled.button`
@@ -57,9 +40,8 @@ const StyledButton = styled.button`
 `;
 
 function Insert(props) {
-    const {onInsert, imgdate} = props;
+    const { onInsert, dateImg } = props;
     const [value, setValue] = useState('');
-    const [images, setImages] = useState();
     const fileInput = useRef(null);
   
 
@@ -107,8 +89,9 @@ function Insert(props) {
               type='file'
               ref={fileInput}
               accept='image/*'
+              onChange={dateImg}
             />
-
+            
             <StyledInput 
                 type='text'
                 onChange={handleChange}
